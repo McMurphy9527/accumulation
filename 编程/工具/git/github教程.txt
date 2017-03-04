@@ -5,3 +5,5 @@
 	$ git remote add origin git@github.com:yourName/yourRepo.git
 3、将本地文件推送到远程项目目录
 	$ git push -u origin master		-u表示第一次提交初始化
+	
+P.S.工具-》选项-》ssh秘钥+项目文件夹
