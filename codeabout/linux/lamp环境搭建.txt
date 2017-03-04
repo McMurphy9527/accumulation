@@ -1,0 +1,10 @@
+1、卸载自带apache
+	yum卸载：httpd: yum remove httpd
+2、关闭防火墙
+	查看状态：service iptables status
+	关闭防火墙：service iptables stop
+3、安装apache（启动位置/etc/init.d/htppd  配置文件/etc/httpd/conf/httpd 文件位置/var/www/html）
+	yum安装：yum install httpd
+	安装后修改apache配置文件：/etc/httpd/conf/httpd.conf -> 将ServerName修改为localhost或者自己的域名
+	开机自动启动：chkconfig httpd on
+4、安装mysql （启动位置/etc/init.d/mysqld 配置文件/etc/my.cnf &/usr/share/mysql/my.cnf 数据目录/var/lib/mysql mysqldump[数据备份？]位置/usr/bin/mysqldump）
