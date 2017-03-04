@@ -1,0 +1,37 @@
+-----------------------------------sql语句-----------------------------------
+在cmd中启动和停止mysql服务
+net start/stop mysql   通过计算机中的服务来启动
+mysql -u -p -h主机 -P端口 登录 |exit、quit、/q 退出
+
+
+显示所有数据库：show databases
+创建数据库： create database 数据库名
+显示创建语句：show create database 数据库名
+删除数据库： drop database 数据库名
+
+ 
+选择数据库： use 数据库名
+查单当前选择数据库： select 数据库名
+显示所有数据表：show tables
+创建数据表： create table 表名（字段 属性,...）；
+显示创建语句：show create table 表名
+表结构：desc 表名
+修改表名：alter table 旧表名 rename 新表名 （同时在新表名前加上库名就是移动）
+添加字段：alter table 表名 add 字段名 数据类型 属性 位置
+修改字段：alter table 表名 modify 旧列名 新列明 类型 属性
+删除数据表：drop table 表名
+复制表结构：create table 新表名 like 旧表名
+复制表结构和数据：create table 新表名 select * from 旧表名
+
+
+增加数据：insert into 表名（字段） values （对应的字段值）；
+删除数据：delete from 表名 where 条件
+修改数据：updata 表名 set 字段1=值1，字段2=值2 where 条件；
+查询数据：select * from 表名 where 条件 group by 字段 having 附加条件 limit m，n；
+
+
+不常用：
+显示所有mysql的字符集：show character set
+查看当前的sql模式：show variables like '%char%';
+设置字符集：set names gbk；
+显示所有的存储引擎：show engines；

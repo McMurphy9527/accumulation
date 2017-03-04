@@ -1,0 +1,57 @@
+常用标签：
+
+{dede:global.cfg_templets_skin/}templete文件夹
+
+{dede:include filename=''/}引入文件
+
+{dede:channel type='等级' row='取出条数'}遍历栏目
+	[field:typename/]
+{/dede:channel}
+
+{dede:arclist limit='0,5' typeid='选择栏目' channelid='选择模块' addfields='字段'}遍历内容
+	[field:title/]
+{/dede:arclist}
+arclist的重要属性：limit、typeid、channleid、addfields、flag(头条...)、orderby（看文档，排序）
+
+[field:global.autoindex/]自动增长编号
+
+{dede:sql sql=''}调用sql语句
+{/dede:sql}
+
+——————————————————————————————————————————————————
+二次开发：
+自定义属性：在include-》taglib-》arclist.lib.php（标签库）
+	$mywhere = $ctag->GetAtt('sort');
+	if($mywhere != ''){
+		orwheres[] = $mywhere;
+	}
+
+自定义函数：在include-》extend.func.php(自定义函数库)
+	测试文件在plus中设置
+
+全局变量：$dsql//全局操作数据库的对象---使用时查看include/dedesqli.class.php，看源码
+	静态页面获取动态数据的思路：12-7
+	dirname（__FILE__）
+——————————————————————————————————————————————————
+dede相关：
+1.dedecms需要布置到站点根目录下，否侧会使的引入的css文件失效
+2.dedecms的数据表具有合理拥余的字段
+3.dede在添加模型字段是支持常用的联动信息字段 | 联动类型 字段名与缓存名相同
+
+——————————————————————————————————————————————————
+
+其他知识点：
+定界符：$str=自定义<<< ￥&&￥&￥&%￥…… 自定义;(定界符，字符串中的特殊字符会被转义)
+统计浏览量：<script type='text/script' src='xxx.php?id=xx&。。。'>通过js向某个php发送请求
+cnzz的引入（流量统计）
+
+
+
+
+
+
+
+
+
+
+
