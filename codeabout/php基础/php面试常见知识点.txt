@@ -1,3 +1,0 @@
-1、echo、print、printf、sprintf的区别
-2、操作符的优先级 p53
-
