@@ -1,0 +1,10 @@
+uri	统一资源标识符
+url	统一资源定位器
+URI是以一种抽象的，高层次概念定义统一资源标识，而URL和URN则是具体的资源标识的方式。URL和URN都是一种URI
+
+URI 是从虚拟根路径开始的
+URL是整个链接
+URL http://zhidao.baidu.com/question/68016373.html  
+URI /question/68016373.html
+
+总结：url是uri的一种完整的变现形式

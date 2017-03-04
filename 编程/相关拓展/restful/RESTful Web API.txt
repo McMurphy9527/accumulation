@@ -1,0 +1,52 @@
+rest不是一种标准而是一种架构风格
+
+PRC面向操作  REST面向资源
+
+web资源：通过http协议可获取或操作的'事物'
+	媒体类型（mime类型）：用于数据传输的数据类型
+		text/xml、text/json、text/html、image/jpg、video/mp4...
+	唯一标识符：uri、url
+
+REST面向资源架构
+	采用uri标识资源
+		http://www.artech.com/employees/c001（编号C001的员工）
+		http://www.artech.com/sales/2013/12/31（2013年12月31日的销售额）
+		http://www.artech.com/orders/2013/q4（2013年第4季度签订的订单）
+	使用链接关联相关资
+		<movie>
+		   <name>魔鬼代言人</name>
+		   <genre>剧情|悬疑|惊悚</genre>
+		   <directors>
+			 <add ref="http://www.artech.com/directors/taylor-hackford">泰勒.海克福德</add>
+		   </directors>
+		</movie>		
+		
+对同一种资源使用统一的接口
+prc风格： 一组相关功能的集合
+   1: public class RoleService
+   2: {
+   3:     public IEnumerable<string> GetAllRoles();
+   4:     public void CreateRole(string roleName);
+   5:     public void DeleteRole(string roleName);
+   6:  
+   7:     public void AddRolesInUser(string userName, string[] roleNames);
+   8:     public void RemoveRolesFromUser(string userName, string[] roleNames);
+   9: }
+   
+rest风格：涉及两种资源 定义两种接口是的相同资源接口一致
+   1: public class RolesService
+   2: {
+   3:     public IEnumerable<string> Get();
+   4:     public void Create(string roleName);
+   5:     public void Delete(string roleName);
+   6: }
+   6: }
+   7:  
+   8: public class RoleAssignmentsService
+   9: {
+  10:     public void Create(RoleAssignment roleName);
+  11:     public void Delete(RoleAssignment roleName);
+  12: }
+	
+
+	

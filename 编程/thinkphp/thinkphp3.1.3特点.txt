@@ -1,0 +1,9 @@
+安装：自定义index文件
+<?php
+define('APP_NAME','APP');
+define('APP_PATH','./APP/');
+define('APP_BUG',TRUE);
+require './ThinkPHP/ThinkPHP.php';
+
+使用rest模式
+入口文件:define('MODE_NAME', 'rest')?  // 采用rest模式运行

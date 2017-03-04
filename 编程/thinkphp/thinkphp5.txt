@@ -1,0 +1,26 @@
+tp3与tp5差异：http://www.cnblogs.com/wupeiky/p/5809320.html
+
+使用：
+1、关于url
+	正常情况下不区分大小写  	解析时方法名会自动转化为驼峰方式
+	当控制器为驼峰命名法时需要在url中更改：www.test.biz/index.php/home/demo_index/index
+2、通过修改入口文件同级目录下的.htaccess文件实现路由重写
+3、API支持友好 用return来返回数据
+4、单字母函数被替换掉
+	C：参数函数config::get('参数1') config::set('配置参数','配置值')
+	I：input();
+5、$this->display() => return view(); => $this -> fetch();
+6、跳转与重定向 success、error、redirect
+7、内置标签'<>' -> '{}'
+8、G() -> debug()
+9、sql调试 getLastSql、fetchSql
+
+ThinkPHP5遵循PSR-2命名规范和PSR-4自动加载规范
+安装：www.test.biz/public/index.php
+目录结构变化
+控制器类比较灵活，不需要继承任何基础类库
+	namespace app\index\controller
+控制器的所有操作方法都是return返回而不是直接输出，系统会调用Response::send方法将最终的应用返回的数据输出到页面或者客户端，并自动转换成default_return_type参数配置的格式。
+独立配置
+	在config.php中 'extra_config_list' => ['database'],
+分层控制器？？？
