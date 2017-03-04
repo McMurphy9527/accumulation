@@ -1,0 +1,7 @@
+1、创建ssh公钥与私钥
+	$ ssh-keygen -t rsa -C "youremail@example.com"
+	将公钥添加到github上
+2、进入到本地仓库，并添加远程仓库
+	$ git remote add origin git@github.com:yourName/yourRepo.git
+3、将本地文件推送到远程项目目录
+	$ git push -u origin master		-u表示第一次提交初始化
